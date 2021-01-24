@@ -16,3 +16,7 @@ require("@rails/activestorage").start()
 // const imagePath = (name) => images(name, true)
 
 import "controllers"
+import "scripts/shared"
+import "scripts/backend"
+import "styles/shared"
+import "styles/backend"
