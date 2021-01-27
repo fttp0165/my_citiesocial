@@ -4,7 +4,7 @@ document.addEventListener('turbolinks:load',()=>{
   if (element){
   bulmaCarousel.attach('#carousel', {
     slidesToScroll: 1,
-    slidesToShow: 5,
+    slidesToShow: 3,
     infinite: true,
     autoplay: true
   });
