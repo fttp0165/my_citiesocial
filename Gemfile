@@ -30,6 +30,8 @@ gem 'pg', '~> 1.2', '>= 1.2.3'
 
 gem 'devise', '~> 4.7', '>= 4.7.3'
 
+gem 'omniauth-google-oauth2', '~> 0.8.1'
+gem 'figaro', '~> 1.2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
