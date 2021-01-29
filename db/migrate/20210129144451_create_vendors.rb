@@ -2,7 +2,7 @@ class CreateVendors < ActiveRecord::Migration[6.0]
   def change
     create_table :vendors do |t|
       t.string :title
-      t.text :decription
+      t.text :description
       t.boolean :online, default: true
       t.timestamps
     end

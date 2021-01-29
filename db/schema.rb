@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_01_29_144451) do
 
   create_table "vendors", force: :cascade do |t|
     t.string "title"
-    t.text "decription"
+    t.text "description"
     t.boolean "online", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
