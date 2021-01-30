@@ -28,6 +28,11 @@ class Admin::VendorsController <  Admin::BaseController
     end
   end
 
+  def destroy
+    @vendor.destroy
+    redirect_to admin_vendors_path,notice:"廠商#{@vendor.title}已刪除"
+  end
+
   private
 
   def vendor_params

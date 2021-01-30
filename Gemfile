@@ -29,6 +29,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'pg', '~> 1.2', '>= 1.2.3'
 
 gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
+gem 'paranoia', '~> 2.4', '>= 2.4.3'
 
 gem 'omniauth-google-oauth2', '~> 0.8.1'
 gem 'figaro', '~> 1.2'
