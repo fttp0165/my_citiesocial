@@ -35,6 +35,8 @@ gem 'omniauth-google-oauth2', '~> 0.8.1'
 gem 'figaro', '~> 1.2'
 gem 'omniauth', '~> 2.0', '>= 2.0.1'
 gem "omniauth-rails_csrf_protection"
+gem 'friendly_id', '~> 5.4', '>= 5.4.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
