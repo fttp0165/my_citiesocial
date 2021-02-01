@@ -8,6 +8,9 @@ class Product < ApplicationRecord
   validates :code, uniqueness: true
 
   belongs_to :vendor
+  has_many :skus
+  accepts_nested_attributes_for :skus,reject_if: :all_blank, allow_destroy: true
+
 
 
   
