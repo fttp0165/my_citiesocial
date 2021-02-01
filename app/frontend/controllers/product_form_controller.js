@@ -8,9 +8,18 @@ export default class extends Controller {
 
     let content=this.templateTarget.innerHTML.replace( /NEW_RECORD/g,new Date().getTime());
     this.linkTarget.insertAdjacentHTML('beforebegin',content)
-    console.log(content)
-  }
-  connect() {
     
+  }
+  remove_sku(event) {
+    event.preventDefault();
+    let wrapper=event.target.closest('.nested-fields');
+    if(wrapper.dataset.newRecord=='true'){
+      wrapper.remove();
+    }else{
+      let de=wrapper.querySelector("input[name*='_destroy']")
+      wrapper.querySelector("input[name*='_destroy']").value=1;
+      wrapper.style.display='none';
+
+    }
   }
 }
