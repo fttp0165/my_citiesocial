@@ -13,10 +13,10 @@
     </tr>   
   </thead>
 
-<tbody>
+<tbody class="sortable-items">
   <% @categories.each do |category|%>
-  <tr>
-    <td><i class="fas fa-arrows-alt-v is-grey"></i><%=link_to category.name,edit_admin_category_path(category)%></td>
+  <tr class='item' data-item="<%= dom_id(category)%>">
+    <td><i class="fas fa-arrows-alt-v has-text-grey"></i><%=link_to category.name,edit_admin_category_path(category)%></td>
     <td><%=link_to "刪除",admin_category_path(category),method: :delete,class:'button is-small is-danger'%></td>
   </tr>
   <%end%>

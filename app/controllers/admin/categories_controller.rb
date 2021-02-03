@@ -1,5 +1,5 @@
 class Admin::CategoriesController < Admin::BaseController
-  before_action :find_category ,only:[:destroy,:edit]
+  before_action :find_category ,only:[:destroy,:edit,:update,:sort]
   def  index
     @categories=Category.order(position: :asc)
   end
@@ -21,7 +21,11 @@ class Admin::CategoriesController < Admin::BaseController
     @category.destroy
     redirect_to admin_categories_path,notice: '新增分類成功'
   end
-
+  
+  def sort
+    @category.insert_at(params[:to].to_i+1)
+    render json:{status:'ok'}
+  end
   private
   def category_param
     params.require(:category).permit(:name)

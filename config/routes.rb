@@ -11,7 +11,11 @@ Rails.application.routes.draw do
     root 'products#index'
     resources :products,except:[:show]
     resources :vendors,except:[:show]
-    resources :categories,except:[:show]
+    resources :categories,except:[:show] do
+      collection  do
+        put :sort #PUT /admin/categories/sort
+      end
+    end
   end
 
   namespace :api do
