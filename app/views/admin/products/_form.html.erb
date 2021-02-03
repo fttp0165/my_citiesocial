@@ -2,7 +2,8 @@
 
   商品主圖：
   <%= form.file_field :cover_image%>
-  <%=image_tag form.object.cover_image.variant(resize:[200,200]) if form.object.cover_image.attached?%>
+  <br/>
+  <%=image_tag form.object.cover_image.variant(resize_to_limit:[200,200]) if form.object.cover_image.attached?%>
   <div class="columns">
     <div class="column is-6">
       <div class="field">
