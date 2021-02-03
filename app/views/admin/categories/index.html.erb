@@ -1,6 +1,10 @@
 <h1 class="title">分類列表</h1>
 
 <%=link_to "新增分類",new_admin_category_path ,class:"button is-info"%>
+<article class="message">
+<div class="message-body">小提示：可以用拖拉調整分類順序</div>
+</article>
+
 <table class="table is-fullwidth has-shad">
   <thead>
     <tr>
@@ -12,7 +16,7 @@
 <tbody>
   <% @categories.each do |category|%>
   <tr>
-    <td><%=link_to category.name,edit_admin_category_path(category)%></td>
+    <td><i class="fas fa-arrows-alt-v is-grey"></i><%=link_to category.name,edit_admin_category_path(category)%></td>
     <td><%=link_to "刪除",admin_category_path(category),method: :delete,class:'button is-small is-danger'%></td>
   </tr>
   <%end%>
