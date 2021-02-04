@@ -6,14 +6,12 @@ class Cart
   end
   def add_item(product_id)
      found=@item.find{|item| item.product_id == product_id}
-     
      if found
       found.increment!
      else
       @item << CartItem.new(product_id)
      end
-
-
+  
   end
 
   def empty?

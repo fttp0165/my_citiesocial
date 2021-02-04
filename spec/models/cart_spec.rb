@@ -16,6 +16,15 @@ RSpec.describe Cart, type: :model do
       expect(cart.item.count).to be 2
       expect(cart.item.first.quantity).to be 3
     end
+
+    it "商品放到購物車，可以再拿出來" do
+      cart=Cart.new
+      v1=Vendor.create(title:"v1")
+      p1=Product.create(name:'kk',list_price:10,sell_price:5,vendor:v1)
+      cart.add_item(p1.id)
+      expect(cart.item.first.product).to be_a Product
+
+    end
     
   end
 
