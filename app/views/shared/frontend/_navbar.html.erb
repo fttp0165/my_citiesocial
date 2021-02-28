@@ -31,7 +31,18 @@
           <%if user_signed_in?%>
            
             <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+              
               <div class="navbar-item has-dropdown is-hoverable">
+                  <%if user_signed_in?%>
+                    <div class="navbar-item" data-controller="cart">
+                      <%=link_to cart_path do%>
+                      <i class="fas fa-shopping-cart"></i> 
+                      <span data-cart-target="count" data-action="addToCart@document->cart#updateCart">
+                        <%="(#{current_cart.items.count})"%>
+                      </span> 
+                      <%end%>
+                    </div>
+                  <%end%>
                   <a class="navbar-link">
                   <i class="fas fa-user"></i>
                   <%=current_user.email%>

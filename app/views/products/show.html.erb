@@ -8,7 +8,7 @@
     </ul>
   </nav>
 
-  <div class="columns">
+  <div class="columns" >
     <div class="column is-7">
       <figure class="image">
         <%=image_tag @product.cover_image.variant(resize_to_limit:[1280,550]) if @product.cover_image.attached?%>
@@ -22,7 +22,7 @@
       </article>
     </div>
 
-    <div class="column is-5">
+    <div class="column is-5"  data-controller="product" data-product-id=<%=@product.id%>>
       <h3 class="has-text-grey-light"><%=@product.vendor.title%></h3>
       <h2 class="title is-4"> <%=@product.name%></h2>
       <p class="has-text-primary is-size-4">
@@ -38,7 +38,7 @@
             </div>
             <div class="column is-9 field is-grouped">
               <div class="select is-fullwidth is medium">
-                <select>
+                <select data-product-target="sku">
                   <%=options_for_select(@product.skus.map{|p|[p.spec,p.id]})%>
                 </select> 
               </div>
@@ -51,12 +51,12 @@
           數量
         </div>
         <div class="column is-9 field is-grouped">
-          <a href="#" class="button is-white is-medium">-</a>
-          <input type="number" name="quantity" class="input is-medium has-text-centered" value="1">
-          <a href="#" class="button is-white is-medium">+</a>
+          <a href="#" class="button is-white is-medium" data-action="click->product#quantity_minus">-</a>
+          <input type="number" name="quantity" class="input is-medium has-text-centered" data-product-target="quantity" value="1">
+          <a href="#" class="button is-white is-medium" data-action="click->product#quantity_plus">+</a>
         </div>
       </div>
-      <a href="#" class="button is-primary is-medium is-fullwidth">加到購物車</a>
+      <a href="#" class="button is-primary is-medium is-fullwidth" data-product-target="add_cart"  data-action="click->product#add_to_cart">加到購物車</a>
     </div>
   </div>
 </section>
