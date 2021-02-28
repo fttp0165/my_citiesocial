@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :vendor do
-    title { "MyString" }
-    decription { "MyText" }
-    online { "true" }
+    title { Faker::Name.name }
+    description { Faker::Lorem.paragraph}
+    online { true }
   end
 end

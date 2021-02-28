@@ -62,6 +62,7 @@
       <%= form.fields_for :skus ,Sku.new,child_index:'NEW_RECORD' do |sku|%>
        <%=render 'sku_fields',form: sku%>
       <%end%>
+      
     </template>
      <%= form.fields_for :skus do |sku_form|%>
        <%=render 'sku_fields',form: sku_form%>
