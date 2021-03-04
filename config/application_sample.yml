@@ -11,3 +11,6 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 google_app_id: your google_app_id
 google_app_secrer: your google_app_secrer
+line_pay_channel_id: "line_pay_channel_id"
+line_pay_channel_SECRET: "line_pay_channel_SECRET"
+line_pay_enpoint: "line_pay_enpoint"
