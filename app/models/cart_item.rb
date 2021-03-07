@@ -1,10 +1,10 @@
 class CartItem
 
-  attr_reader :sku_id,:quantity
+  attr_reader :product_id,:quantity
 
   
-    def initialize(sku_id,quantity=1)
-      @sku_id=sku_id
+    def initialize(product_id,quantity=1)
+      @product_id=product_id
       @quantity=quantity
     end
 
@@ -13,8 +13,7 @@ class CartItem
     end
 
     def product
-      # Product.friendly.find(sku_id)
-      Product.joins(:skus).find_by(skus:{id: sku_id})
+      Product.friendly.find(product_id)
     end
 
     def total_price
